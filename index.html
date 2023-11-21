@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Weather App</title>
+</head>
+<body class="day-mode">
+    <style>
+        .day-mode {
+            background-image: radial-gradient(
+                farthest-corner at 50px 50px,
+                #A7CFF4 0%,
+                #3296CD 40%,
+                #00669F 100%
+            );
+        }
+
+        .dark-mode {
+            background-image: radial-gradient(
+                farthest-corner at 50px 50px,
+                #7B8085 0%,
+                #475157 40%,
+                #232C31 100%
+            );
+        }
+
+        /* .main-div {
+            box-shadow: 10px 10px 10px -1px #00669F, 
+                         -10px -10px 10px -1px #3296CD;
+        } */
+    </style>
+    <div class="container mx-auto h-[100dvh] font-poppins text-center flex items-center justify-center p-3 relative">
+        <div class="absolute top-3 right-3"> 
+            <input type="checkbox" id="checkbox" class="hidden">
+            <label for="checkbox" class="relative inline-flex h-7 w-14 p-1 rounded-full bg-white">
+                <span class="dot inline-block h-5 w-5 rounded-full bg-gray-300 transition"></span>
+            </label>
+        </div>
+
+        <div class="max-w-[675px] rounded-3xl p-10 main-div ">
+            <div class="search-box flex justify-center">
+                <div class="flex items-center justify-center w-72 relative">
+                    <input 
+                        class="bg-slate-100 pl-10 pr-4 py-3 rounded-full focus:outline-none w-full"
+                        id="input-city"
+                        type="text"
+                        placeholder="Enter your location"
+                    />
+                    <i class="fas fa-location-dot absolute text-zinc-700 left-5 color-slate-200"></i>
+                </div>
+            </div>
+
+            <div class="text-white flex items-center justify-center p-3 max-md:block">
+                <div class="weather-img-div flex items-center justify-center ">
+                    <img src="img/Clear.png" alt="weather-img" class="w-60 h-60">
+                </div>
+                <div class="text-center">
+
+                    <div class="not-found hidden">
+                        <img src="img/Error.png" alt="" class="w-60 h-60 ml-10">
+                        <p>Location does not exist.</p>
+                    </div>
+
+                    <div class="weather-box">
+                        <h1 class="temperature text-5xl">0°C</h1>
+                        <span class="description text-sm">-</span>
+                        <p class="location py-3 capitalize">-</p>
+                    </div>
+                    
+                    <div class="weather-details flex items-center justify-center text-left  py-2">
+                        <div class="humidity flex items-center px-4 ">
+                            <i class="fas fa-water text-3xl"></i>
+                            <div class="p-2">
+                                <h1 class="font-medium">0%</h1>
+                                <p class="text-xs">Humidity</p>
+                            </div>
+                        </div>
+                        <div class="wind flex items-center px-4 ">
+                            <i class="fas fa-wind text-3xl"></i>
+                            <div class="p-2">
+                                <h1 class="font-medium">0Km/h</h1>
+                                <p class="text-xs">Wind Speed</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="script.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        montserrat: ['Montserrat'],
+                        poppins: ['Poppins'],
+                    },
+                }
+            }
+        }
+    </script>
+</body>
+</html>
