@@ -43,7 +43,7 @@
             </label>
         </div>
 
-        <div class="max-w-[675px] rounded-3xl p-10 main-div ">
+        <div class="max-w-[675px] rounded-3xl p-10 main-div max-md:px-4 ">
             <div class="search-box flex justify-center">
                 <div class="flex items-center justify-center w-72 relative">
                     <input 
@@ -70,7 +70,11 @@
                     <div class="weather-box">
                         <h1 class="temperature text-5xl">0°C</h1>
                         <span class="description text-sm">-</span>
-                        <p class="location py-3 capitalize">-</p>
+                        <div class="flex justify-center">
+                            <p class="location py-3 capitalize">-</p>
+                            <span class="country py-3">-</span>
+                        </div>
+
                     </div>
                     
                     <div class="weather-details flex items-center justify-center text-left  py-2">

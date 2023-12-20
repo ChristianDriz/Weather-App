@@ -36,6 +36,7 @@ $(document).ready(function () {
             const humidity = $('.weather-details .humidity h1');
             const wind = $('.weather-details .wind h1');
             const loc = $('.location');
+            const country = $('.weather-box .country');
 
             switch (json.weather[0].main) {
                 case 'Clear':
@@ -63,7 +64,8 @@ $(document).ready(function () {
             description.html(`${json.weather[0].description}`);
             humidity.html(`${json.main.humidity}%`);
             wind.html(`${parseInt(json.wind.speed)}Km/h`);
-            loc.html(city);
+            loc.html(`${json.name}`);
+            country.html(`, ${json.sys.country}`);
 
         });
     }
@@ -98,6 +100,7 @@ $(document).ready(function () {
             const humidity = $('.weather-details .humidity h1');
             const wind = $('.weather-details .wind h1');
             const loc = $('.location');
+            const country = $('.weather-box .country');
 
             switch (json.weather[0].main) {
                 case 'Clear':
@@ -125,10 +128,8 @@ $(document).ready(function () {
             description.html(`${json.weather[0].description}`);
             humidity.html(`${json.main.humidity}%`);
             wind.html(`${parseInt(json.wind.speed)}Km/h`);
-
-            loc.html(city);
-
-            console.log(city);
+            loc.html(`${json.name}`);
+            country.html(`, ${json.sys.country}`);
         });
 
     });
